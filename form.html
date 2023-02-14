@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>local storage</title>
+</head>
+<body>
+    
+    <form onsubmit="savedata(event)">
+        <label >Name</label>
+        <input type="text" name="myname" required>
+
+        <label >Email</label>
+        <input type="text" name="myemail" required>
+
+        <label >Phone Number</label>
+        <input type="text" name="myphnnum" required>
+
+        <button>Submit</button>
+    </form>
+
+    <script>
+        function savedata(event){
+            event.preventDefault();
+
+            let name=event.target.myname.value;
+
+            let email=event.target.myemail.value
+
+            let phn=event.target.myphnnum.value;
+
+
+            localStorage.setItem('Name',name);
+            localStorage.setItem('Email',email);
+            localStorage.setItem('Phone',phn);
+        }
+    </script>
+</body>
+</html>
